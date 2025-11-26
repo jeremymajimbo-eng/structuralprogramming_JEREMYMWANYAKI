@@ -1,52 +1,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
-{
-    int x = 1234;
-    int y ;
-    int choice;
+int main() {
+    int num1, num2;
 
+    // Input from user
+    printf("Enter first number: ");
+    scanf("%d", &num1);
 
-    printf("enter pin: ");
-    scanf("%d", &y);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
 
-     if (x==y){
-        printf("Access granted\n");
+    // Performing operations
+    printf("\n--- Results ---\n");
+    printf("Addition: %d\n", num1 + num2);
+    printf("Subtraction: %d\n", num1 - num2);
+    printf("Multiplication: %d\n", num1 * num2);
 
-        printf("Select an action below:\n");
-        printf("1 - Open door\n");
-        printf("2 - Change username\n");
-        printf("3 - Change Pin\n");
-        printf("4 - Exit\n");
-        printf("Enter your choice:\n");
-        scanf("%d", &choice);
-
-
-    switch (choice) {
-    case 1:
-        printf( "Door is opening...");
-        break;
-
-    case 2:
-        printf("Username change selected");
-        break;
-
-    case 3:
-        printf("Pin change selected");
-        break;
-
-    case 4:
-        printf("Existing system");
-        break;
-
-    default:
-        printf("Invalid option");
+    // Handling division and modulus safely
+    if (num2 != 0) {
+        printf("Division: %d\n", num1 / num2);
+        printf("Modulus: %d\n", num1 % num2);
+    } else {
+        printf("Division: Undefined (division by zero)\n");
+        printf("Modulus: Undefined (modulus by zero)\n");
     }
 
-    }else {
-       printf("Wrong pin! Access denied");
-
-    }
-          return 0;
+    return 0;
 }
