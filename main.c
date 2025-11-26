@@ -1,52 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>   // <-- REQUIRED for strlen()
 
 int main()
 {
-    int x = 1234;
-    int y ;
-    int choice;
+    char name[100];
 
+    printf("Enter a string: ");
+    scanf("%s", name);
 
-    printf("enter pin: ");
-    scanf("%d", &y);
+    printf("You entered: %s\n", name);
 
-     if (x==y){
-        printf("Access granted\n");
+    int length = strlen(name);
 
-        printf("Select an action below:\n");
-        printf("1 - Open door\n");
-        printf("2 - Change username\n");
-        printf("3 - Change Pin\n");
-        printf("4 - Exit\n");
-        printf("Enter your choice:\n");
-        scanf("%d", &choice);
+    printf("Length of the string: %d\n", length);
 
-
-    switch (choice) {
-    case 1:
-        printf( "Door is opening...");
-        break;
-
-    case 2:
-        printf("Username change selected");
-        break;
-
-    case 3:
-        printf("Pin change selected");
-        break;
-
-    case 4:
-        printf("Existing system");
-        break;
-
-    default:
-        printf("Invalid option");
-    }
-
-    }else {
-       printf("Wrong pin! Access denied");
-
-    }
-          return 0;
+    return 0;
 }
+
